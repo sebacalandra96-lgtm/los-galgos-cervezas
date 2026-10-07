@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publicá tu alojamiento sin comisiones abusivas</title>
+<meta name="description" content="Para anfitriones de Montevideo, Maldonado y Rocha: dejá de regalar el 15,5% de cada reserva.">
+<style>
+  :root { --fondo:#fbfaf7; --texto:#1d2a33; --suave:#5b6b75; --acento:#0f6e6a; --acento2:#e8f3f2; --borde:#dfe5e8; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background:var(--fondo); color:var(--texto); line-height:1.55; }
+  .cont { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+  header { padding: 22px 0; font-weight: 700; letter-spacing:.02em; }
+  .hero { padding-top: 40px; padding-bottom: 56px; display:grid; gap:40px; grid-template-columns: 1.15fr .85fr; align-items:center; }
+  h1 { font-size: clamp(2rem, 4.6vw, 3.1rem); line-height:1.1; margin:0 0 18px; }
+  .hero p { font-size:1.15rem; color:var(--suave); margin:0 0 26px; }
+  .cuenta { background:#fff; border:1px solid var(--borde); border-radius:16px; padding:24px; }
+  .cuenta h3 { margin:0 0 14px; font-size:1rem; color:var(--suave); font-weight:600; }
+  .fila { display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px dashed var(--borde); }
+  .fila:last-child { border:0; font-weight:700; color:var(--acento); }
+  .cuenta input { width:110px; text-align:right; font:inherit; padding:4px 8px; border:1px solid var(--borde); border-radius:8px; }
+  .btn { display:inline-block; background:var(--acento); color:#fff; text-decoration:none; padding:14px 26px; border-radius:999px; font-weight:600; border:0; font-size:1rem; cursor:pointer; }
+  section { padding: 56px 0; border-top:1px solid var(--borde); }
+  h2 { font-size: 1.7rem; margin:0 0 24px; }
+  .grilla { display:grid; grid-template-columns: repeat(3, 1fr); gap:20px; }
+  .tarjeta { background:#fff; border:1px solid var(--borde); border-radius:14px; padding:22px; }
+  .tarjeta b { display:block; margin-bottom:6px; }
+  form { background:#fff; border:1px solid var(--borde); border-radius:16px; padding:28px; display:grid; gap:14px; max-width:560px; }
+  label { font-weight:600; font-size:.95rem; display:grid; gap:6px; }
+  label > input:not([type=checkbox]), label > select { width:100%; min-width:0; }
+  input, select { font:inherit; padding:11px 12px; border:1px solid var(--borde); border-radius:10px; background:#fff; }
+  .consent { font-weight:400; display:flex; gap:10px; align-items:flex-start; font-size:.9rem; color:var(--suave); }
+  .consent input { margin-top:4px; }
+  .ok { display:none; background:var(--acento2); padding:18px; border-radius:12px; }
+  footer { padding:30px 0 50px; color:var(--suave); font-size:.85rem; }
+  @media (max-width: 760px) { .hero, .grilla { grid-template-columns: 1fr; } form { padding:20px; } }
+</style>
+</head>
+<body>
+<header><div class="cont">[NOMBRE DE LA PLATAFORMA]</div></header>
+
+<div class="cont hero">
+  <div>
+    <h1>Tu alojamiento, tus huéspedes, tu plata.</h1>
+    <p>Airbnb pasó a cobrarle a los anfitriones un 15,5% de cada reserva (antes era un 3%). Somos una alternativa uruguaya para anfitriones de Montevideo, Maldonado y Rocha, con una comisión de [X]%.</p>
+    <a class="btn" href="#sumate">Quiero sumarme</a>
+  </div>
+  <div class="cuenta" aria-live="polite">
+    <h3>Hacé la cuenta con tus números</h3>
+    <div class="fila"><span>Facturación anual (US$)</span><input id="fact" type="number" value="14000" min="0" step="500"></div>
+    <div class="fila"><span>Comisión de Airbnb (15,5%)</span><span id="airbnb"></span></div>
+    <div class="fila"><span>Con nosotros (<span class="pct"></span>%)</span><span id="nos"></span></div>
+    <div class="fila"><span>Te queda de más por año</span><span id="ahorro"></span></div>
+  </div>
+</div>
+
+<section><div class="cont">
+  <h2>Por qué sumarte</h2>
+  <div class="grilla">
+    <div class="tarjeta"><b>Comisión baja y fija</b>[X]% por reserva, sin letra chica ni cambios de un año para el otro.</div>
+    <div class="tarjeta"><b>Hecha en Uruguay</b>Atención local, pagos en pesos o dólares y conocimiento de cada balneario.</div>
+    <div class="tarjeta"><b>Sin exclusividad</b>Seguí publicando donde quieras. Probalo esta temporada sin riesgo.</div>
+  </div>
+</div></section>
+
+<section id="sumate"><div class="cont">
+  <h2>Sumate a la lista de anfitriones fundadores</h2>
+  <form id="form">
+    <label>Nombre<input name="nombre" required autocomplete="name"></label>
+    <label>Email<input name="email" type="email" required autocomplete="email"></label>
+    <label>WhatsApp (opcional)<input name="whatsapp" type="tel" autocomplete="tel"></label>
+    <label>¿Dónde está tu alojamiento?
+      <select name="zona" required>
+        <option value="">Elegí una zona</option>
+        <option>Montevideo</option><option>Punta del Este / La Barra / José Ignacio</option>
+        <option>Piriápolis / resto de Maldonado</option><option>La Paloma / La Pedrera</option>
+        <option>Punta del Diablo / Cabo Polonio / Valizas</option><option>Resto de Rocha</option><option>Otra</option>
+      </select></label>
+    <label>¿Cuántos alojamientos tenés?
+      <select name="cantidad"><option>1</option><option>2 a 4</option><option>5 a 10</option><option>Más de 10 (administro propiedades)</option></select></label>
+    <label class="consent"><input type="checkbox" name="consentimiento" value="si" required>
+      Acepto que [NOMBRE DE LA EMPRESA] guarde estos datos para contactarme sobre la plataforma. Puedo pedir que los borren en cualquier momento escribiendo a [EMAIL] (Ley 18.331).</label>
+    <button class="btn" type="submit">Quiero sumarme</button>
+    <div class="ok" id="ok">¡Gracias! Te vamos a escribir antes del lanzamiento.</div>
+  </form>
+</div></section>
+
+<footer><div class="cont">[NOMBRE DE LA EMPRESA] · No estamos afiliados a Airbnb. Datos de comisión: tarifa de servicio solo para anfitriones de Airbnb, 15,5% (2026).</div></footer>
+
+<script>
+  // Configurar: comisión propia y adónde se envía el formulario (Formspree, Google Apps Script, etc.).
+  const COMISION = 5;
+  const ENVIAR_A = "";  // ej: "https://formspree.io/f/xxxxxx". Vacío = abre un email.
+  const EMAIL_CONTACTO = "[EMAIL]";
+
+  const fmt = n => "US$ " + Math.round(n).toLocaleString("es-UY");
+  document.querySelectorAll(".pct").forEach(e => e.textContent = COMISION);
+  function calcular() {
+    const f = Math.max(0, +document.getElementById("fact").value || 0);
+    document.getElementById("airbnb").textContent = fmt(f * 0.155);
+    document.getElementById("nos").textContent = fmt(f * COMISION / 100);
+    document.getElementById("ahorro").textContent = fmt(f * (0.155 - COMISION / 100));
+  }
+  document.getElementById("fact").addEventListener("input", calcular);
+  calcular();
+
+  document.getElementById("form").addEventListener("submit", async ev => {
+    ev.preventDefault();
+    const datos = Object.fromEntries(new FormData(ev.target));
+    if (ENVIAR_A) {
+      try {
+        const r = await fetch(ENVIAR_A, { method: "POST", headers: { "Accept": "application/json", "Content-Type": "application/json" }, body: JSON.stringify(datos) });
+        if (!r.ok) throw new Error(r.status);
+      } catch (e) { alert("No se pudo enviar. Probá de nuevo en un rato."); return; }
+    } else {
+      const cuerpo = Object.entries(datos).map(([k, v]) => `${k}: ${v}`).join("\n");
+      location.href = `mailto:${EMAIL_CONTACTO}?subject=${encodeURIComponent("Quiero sumarme")}&body=${encodeURIComponent(cuerpo)}`;
+    }
+    ev.target.querySelectorAll("input, select, button").forEach(e => e.disabled = true);
+    document.getElementById("ok").style.display = "block";
+  });
+</script>
+</body>
+</html>

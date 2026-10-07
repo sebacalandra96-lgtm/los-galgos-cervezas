@@ -1,0 +1,4 @@
+.venv/
+datos/
+clave_google.txt
+__pycache__/
